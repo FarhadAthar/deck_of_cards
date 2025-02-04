@@ -24,14 +24,18 @@ class Cards {
   String code;
   String image;
   Images images;
+  String value;
+  String suit;
 
-  Cards({required this.code, required this.image, required this.images});
+  Cards({required this.code, required this.image, required this.images, required this.value, required this.suit});
 
   factory Cards.fromMap(Map<String, dynamic> map) {
     return Cards(
       code: map['code'],
       image: map['image'],
       images: Images.fromMap(map['images']),
+      value: map['value'],
+      suit: map['suit'],
     );
   }
 }
