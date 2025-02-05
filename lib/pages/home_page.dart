@@ -10,40 +10,63 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 249, 227, 119),
+          title: Text(widget.title,
+              style:
+                  const TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+          centerTitle: true,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
+        body: Expanded(
+          child: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/cards_bg.jpg'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            child: Expanded(
+              flex: 10,
+              child: Column(
+                children: [
+                  const Spacer(
+                    flex: 8,
+                  ),
+                  Expanded(
+                      flex: 11,
+                      child: Row(
+                        children: [
+                          const Spacer(
+                            flex: 4,
+                          ),
+                          Expanded(
+                              flex: 3,
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            const Color.fromARGB(
+                                                255, 249, 227, 119))),
+                                onPressed: () {
+                                  // Navigator.pushNamed(context, '/new_deck');
+                                },
+                                child: const Text('S T A R T',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black)),
+                              )),
+                          const Spacer(
+                            flex: 4,
+                          ),
+                        ],
+                      ))
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

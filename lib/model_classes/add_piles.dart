@@ -1,4 +1,7 @@
+import 'package:flutter_deck_of_cards/model_classes/new_deck.dart';
+
 class AddPiles {
+  
   bool success;
   String deckid;
   int remaining;
