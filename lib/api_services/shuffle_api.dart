@@ -3,7 +3,7 @@ import 'package:flutter_deck_of_cards/model_classes/shuffle_cards.dart';
 
 class ShuffleCardsApi extends ApiService {
   @override
-  String get apiURL => '/new/shuffle/?deck_count=1';
+  String get apiURL => 'new/shuffle/?deck_count=1';
 
   Future<ShuffleCards> getShuffleCards() async {
     var data = await fetch();

@@ -1,20 +1,19 @@
-
-class ShufflePiles {
+class DrawingFromPiles {
   bool success;
   String deckid;
   int remaining;
   Piles piles;
   List<Cards> cards;
 
-  ShufflePiles(
+  DrawingFromPiles(
       {required this.success,
       required this.deckid,
       required this.remaining,
       required this.piles,
       required this.cards});
 
-  factory ShufflePiles.fromMap(Map<String, dynamic> map) {
-    return ShufflePiles(
+  factory DrawingFromPiles.fromMap(Map<String, dynamic> map) {
+    return DrawingFromPiles(
       success: map['success'],
       deckid: map['deck_id'],
       remaining: map['remaining'],
@@ -54,7 +53,11 @@ class Cards {
   String suit;
   String code;
 
-  Cards({required this.image, required this.value, required this.suit, required this.code});
+  Cards(
+      {required this.image,
+      required this.value,
+      required this.suit,
+      required this.code});
 
   factory Cards.fromMap(Map<String, dynamic> map) {
     return Cards(

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 
 abstract class ApiService {
-  final baseURL = 'https://deckofcardsapi.com/api/deck';
+  final baseURL = 'https://deckofcardsapi.com/api/deck/';
   String get apiURL;
   String get url => baseURL + apiURL;
 
